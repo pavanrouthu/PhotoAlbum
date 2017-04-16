@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+	<title>My Photo Album - Rish</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div ng-controller="myController">
+
+<div class='header'>
+<b>Rish Routhu</b>
+<div class="clouds x5"></div>
+</div>
+
+<div class='container' > 
+<input type=text placeholder='Search here for photo...' class='searchbox' ng-model='searchText'/>
+</div>
+<div class='mid-section'>
+<div class="clouds x4"></div>
+<!-- <a ng-href="" > -->
+<!-- <img class='mid-section-img' ng-repeat="image in imagelist | filter: searchText" ng-src="{{image.url}}" alt="{{image.name}}" ng-click='imagebymth(image.url)'/> -->
+<span class= 'midsectionclouds' ng-repeat="image in imagelist | filter: searchText" ng-click='imagebymth(image.url)' ng-style="{'background-image': 'url(' + image.url + ')'}">{{image.month}}</span>
+
+<!-- <span class='mid-section-img' ng-repeat="pics in months | filter: searchText" ng-click="expression"><img class='mid-section-img' ng-src="{{imagelist.url}}" alt="{{imagelist.name}}">{{pics}}</span> -->
+<!-- </a> -->
+</div>
+
+<!-- <div class="cloud"> -->
+
+<div id="cloud">
+
+<div class="clouds x1"></div>
+<div class="clouds x2"></div>
+<div class="clouds x3"></div>
+
+<div id='bottom_c' name="mainbody">
+<div class="slider">
+	<img class="slide" ng-repeat="detailimg in detailedimages" ng-src="{{detailimg.url}}" alt="{{detailimg.name}}" ng-hide="!isCurrentImage($index)"/>
+</div>
+<!--  -->
+
+	<a class="arrow prev" href="#mainbody" ng-click="nextSlide()"></a>
+    <a class="arrow next" href="#" ng-click="prevSlide()"></a>
+</div>
+
+<!-- 	<nav class='nav'>
+		<div class="wrapper">
+			<ul class="dots">
+				<li class="dot" ng-repeat="detailimg in detailedimages">
+					<a href="#" ng-class="{'active': isCurrentImage($index)}" ngclick="setCurrentImage($index);">
+						{{detailimg.name}}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav> -->
+
+
+<div id="right_c"></div>
+<div id="left_c"></div>
+
+
+
+
+</div>
+
+<div class='footer'>&copy; 2015 All rights reserved for the dad :)</div>
+
+<!-- </div> -->
+
+<script type="text/javascript" src= '/lib/angular.min.js'></script>
+<script type="text/javascript" src= '/lib/angular-animate.min.js'></script>
+<script type="text/javascript" src= '/lib/angular-touch.min.js'></script>
+<!-- <script type="text/javascript" src= 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js'></script>
+<script type="text/javascript" src= 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js'></script>
+<script type="text/javascript" src= 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-touch.min.js'></script> -->
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+<script type="text/javascript" src= '/js/myApp.js'></script>
+</body>
+</html>
